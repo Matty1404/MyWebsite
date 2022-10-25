@@ -21,8 +21,11 @@ function getVideos()
             videoContainer.innerHTML += `
             <a target = '_blank' href="https://www.youtube.com/watch?v=${video.id.videoId}">
             <div class="media-elements">
-            <img src = "${video.snippet.thumbnails.high.url}")></img>
-            <h3>${video.snippet.title}</h3>
+            <img class = "tn" src = "${video.snippet.thumbnails.high.url}")>
+            <div class = "tn_overlay">
+            <h3 class="tn_title">${video.snippet.title}</h3>
+            <p class = "tn_desc">${video.snippet.description}</p>
+            </div>
             </div>
             </a>
             

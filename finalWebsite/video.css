@@ -44,9 +44,6 @@
     font-size: 2rem;
 }
 
-.fa-gem {
-    margin-right: 0.5rem;
-}
 
 .navbar__menu {
     display: flex;
@@ -200,7 +197,7 @@
 }
 
 .main {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     color: black;
     height: 1000px;
     padding-left: 10px;
@@ -232,7 +229,7 @@
     grid-auto-flow: column;
     grid-auto-columns: 36%;
     gap: var(--size-3);
-    background-color: white;
+    background-color: rgb(0, 0, 0);
 
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -240,40 +237,80 @@
 }
 
 .media-elements {
-    display: grid;
-    grid-template-rows: min-content;
+    /* display: flex; */
+    position: relative;
     border-radius: 1rem;
     padding: 5px 5px;
-    height: 50vh;
+    height: 100%;
     opacity: 1;    
     align-items: center;
     justify-content: center;
     background-color: black;
-    color: white;
+    text-align: left;
+    color: red;
+    background-size: 100% 100%;
+    transition: all 1s ease;
+}
+
+.tn {
+    display: block;
+    height: 100%
+}
+
+.tn_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: rgb(255, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+
+.tn_overlay:hover {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.tn_overlay > * {
+    transform: translateY(20px);
+    transition: transform 1s;
+}
+
+.tn_overlay:hover > * {
+    transform: translateY(0px);
+    transition: transform 1s;
+}
+
+.tn_title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tn_desc {
+    font-size: 1.25rem;
+    margin-top: 0.3rem;
 }
 
 .media-elements h3 {
-    color: white;
-    align-self: center;
-    justify-self: center;
-    text-decoration: none;
-}
-
-.media-elements:hover > img{
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-.media-elements:hover > h3 {
-    text-decoration: none;
     color: red;
-}
+    text-decoration: none;
+    opacity: 1;
+} 
 
 .media-elements > img {
-    inline-size: 100%;
+    width: 100%;
+    height: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
+
+
+
 
 .video-list {
     display: grid;
@@ -289,10 +326,19 @@
 }
 
 .media-scroller::-webkit-scrollbar-thumb {
-    background: black;
+    background: rgb(43, 2, 2);
     border-radius: 100vw;
 }
 
+.overview p {
+    color: red;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.overview {
+    margin-top: 4rem;
+}
 
 
 
@@ -328,12 +374,13 @@
     align-items: flex-start;
     margin: 16px;
     text-align: left;
-    width: 160px;
+    width: 200px;
     box-sizing: border-box;
 }
 
 .footer__links--items h2 {
     margin-bottom: 16px;
+    font-size: 1.5rem;
 }
 
 .footer__links--items > h2 {
@@ -347,7 +394,7 @@
 }
 
 .footer__links--items a:hover {
-    color: rgb(236, 193, 193);
+    color: rgb(223, 31, 31);
     transition: 0.3 ease-out;
 }
 

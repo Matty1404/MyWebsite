@@ -228,7 +228,7 @@
 
 .main__content h2 {
     font-size: 3rem;
-    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-image: linear-gradient(to top, #dfdc09 0%, #1baaca 100%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -239,6 +239,18 @@
     margin-top: 1rem;
     font-size: 2rem;
     font-weight: 700;
+}
+
+.main__content li {
+    margin-top: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.main__content h3 {
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .main__button {

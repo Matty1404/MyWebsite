@@ -12,7 +12,7 @@ menu.addEventListener('click', function() {
 function main() {
     const canvas = document.querySelector('#c');
     const renderer = new THREE.WebGLRenderer({canvas});
-  
+
     const fov = 75;
     const aspect = 2;  // the canvas default
     const near = 0.1;
@@ -31,15 +31,16 @@ function main() {
     const loader = new THREE.TextureLoader();
   
     const materials = [
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
-      new THREE.MeshBasicMaterial({map: loader.load('../pictures/IMG_0038.JPG')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/chess.png')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/pokemonGame.png')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/sheetRecog.png')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/sheetRecog.png')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/sheetRecog.png')}),
+      new THREE.MeshBasicMaterial({map: loader.load('../pictures/web-football.png')}),
     ];
     const cube = new THREE.Mesh(geometry, materials);
     scene.add(cube);
+    scene.background = new THREE.Color(0xeed9c4);
     cubes.push(cube);  // add to our list of cubes to rotate
   
     function resizeRendererToDisplaySize(renderer) {
