@@ -16,7 +16,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className='h-[5rem] bg-gradient-to-t from-black to-gray-700 text-red-800'>
+          <div className='flex flex-row justify-between h-full'>
+            <div className='p-5 flex justify-center items-center text-3xl'>
+              Matthew's Portfolio
+            </div>
+            <div className='p-5 h-full text-xl mx-5 items-center justify-center'>
+              <ul className='flex flex-row gap-10'>
+                <li><a href='#'>About me</a></li>
+                <li><a href='#'>Projects</a></li>
+                <li><a href='#'>Achievements</a></li>
+                <li><a href='#'>Experiences</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }
