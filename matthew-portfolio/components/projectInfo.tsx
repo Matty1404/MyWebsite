@@ -9,11 +9,13 @@ export default function ProjectInfo( {title, image, group, description, tags}: {
                     <h1 className="text-4xl font-bold my-4">
                         {title}
                     </h1>
-                    {tags.map((tag) => {
+                    {tags.map((tag, index) => {
                         return (
-                            <h1 className="text-xl font-semibold my-4 border border-blue-700 rounded-xl px-2 py-1 bg-blue-300 flex items-center justify-center">
-                                {tag}
-                            </h1>
+                            <div key={index}>
+                                <h1 className="text-xl font-semibold my-4 border border-blue-700 rounded-xl px-2 py-1 bg-blue-300 flex items-center justify-center">
+                                    {tag}
+                                </h1>
+                            </div>
                         )
                     })}
                 </div>

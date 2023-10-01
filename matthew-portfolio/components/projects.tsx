@@ -39,7 +39,7 @@ const ProjectCarousel = ({ projects }: {projects: {title: string, image: string,
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center">
       <div className="relative flex justify-center items-center my-10 w-3/4 h-[22rem] overflow-hidden">
         {projects.map((project, index) => {
           const isCurrent = index === currentProjectIndex;

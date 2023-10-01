@@ -20,7 +20,7 @@ export default function AboutMe() {
             </div>
             <div className="">
             <img
-                src="./word-cloud.png"
+                src="./word-cloud3.png"
                 alt="word cloud"
                 className="w-4/5 h-4/5 "
                 />
