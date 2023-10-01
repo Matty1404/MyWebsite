@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='h-[5rem] bg-gradient-to-t from-black to-gray-700 text-red-800 sticky top-0 z-100'>
+        <nav className='h-[5rem] bg-gradient-to-t from-black to-gray-700 text-red-800 sticky top-0 z-[200]'>
           <div className='flex flex-row justify-between h-full'>
             <div className='p-5 flex justify-center items-center text-3xl'>
               Matthew's Portfolio

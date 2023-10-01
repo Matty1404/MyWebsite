@@ -4,44 +4,85 @@ import React, { useState } from "react";
 export default function MyProjects() {
     const projects = [
         {
-          title: "Project 1 lots of stuff hahahahaha",
-          image: "/project1.jpg",
+          title: "Chess and AI",
+          image: "./chess.png",
+          group: false,
         },
         {
-          title: "Project 2 aksdgh jahsgdjhasdhjagsd",
-          image: "/project2.jpg",
+          title: "2D Pokemon",
+          image: "/pokemonGame.png",
+          group: false,
         },
         {
-          title: "Project 3 ajsdhkjahsdkjahdjs",
-          image: "/project3.jpg",
+          title: "Discord bots",
+          image: "/discordBot.png",
+          group: false,
         },
         {
-          title: "Project 4 aksdgh jahsgdjhasdhjagsd",
-          image: "/project4.jpg",
+          title: "Optical Sheet Music Recogniser",
+          image: "/sheetRecog.png",
+          group: true,
         },
         {
-          title: "Project 5 ajsdhkjahsdkjahdjs",
-          image: "/project5.jpg",
+          title: "Web-Football",
+          image: "/web-football.png",
+          group: false,
         },
         {
-          title: "Project 6 aksdgh jahsgdjhasdhjagsd",
-          image: "/project6.jpg",
+          title: "Web-Crawler",
+          image: "/web-crawler.png",
+          group: false,
         },
         {
-          title: "Project 7 ajsdhkjahsdkjahdjs",
-          image: "/project7.jpg",
+          title: "ARM11 Emulator",
+          image: "/rasbpie.png",
+          group: true,
+        },
+        {
+          title: "ARM11 Assembler",
+          image: "/",
+          group: true,
+        },
+        {
+          title: "11+ Prep App",
+          image: "/",
+          group: false,
+        },
+        {
+          title: "Compiler for WACC language",
+          image: "/compiler.png",
+          group: true,
+        },
+        {
+          title: "Bulk buy website",
+          image: "/bulkbuy.png",
+          group: true,
+        },
+        {
+          title: "Improved Pintos Operating System",
+          image: "/pintos.png",
+          group: true,
+        },
+        {
+          title: "Chase.io",
+          image: "/chase.png",
+          group: true,
         },
         // Add more project objects as needed
       ];
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-5">
+            <div>
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">My Projects</h1>
+
+            </div>
             <ProjectCarousel projects={projects}/>
         </div>
     )
 }
 
 
-const ProjectCarousel = ({ projects }: {projects: {title: string, image: string}[]}) => {
+const ProjectCarousel = ({ projects }: {projects: {title: string, image: string, group: boolean}[]}) => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const totalProjects = projects.length;
 
@@ -55,12 +96,36 @@ const ProjectCarousel = ({ projects }: {projects: {title: string, image: string}
     );
   };
 
+  function handleClickProject(index: number) {
+    if (currentProjectIndex !== index) {
+      setCurrentProjectIndex(index);
+    } else {
+      // bring up modal
+    }
+  }
+
   return (
-    <div className="relative flex justify-center items-center my-10 w-[80rem] h-[20rem] overflow-hidden">
+    <div className="relative flex justify-center items-center my-10 w-3/4 h-[22rem] overflow-hidden">
       {projects.map((project, index) => {
         const isCurrent = index === currentProjectIndex;
         const distFromCurrent = Math.abs(currentProjectIndex - index);
         // larger the distance, more opaque it should be
+        var tx = 0
+        if (distFromCurrent > 3) {
+          if (index < currentProjectIndex) {
+            tx = -(index - currentProjectIndex) * 30 + (10 - distFromCurrent) * 3
+          } else {
+            tx = -(index - currentProjectIndex) * 30 - (10 - distFromCurrent) * 3
+          }
+        } else if (index !== currentProjectIndex) {
+          if (index < currentProjectIndex) {
+            tx = (index - currentProjectIndex) * 30 - (10 - distFromCurrent) * 3
+          } else {
+            tx = (index - currentProjectIndex) * 30 + (10 - distFromCurrent) * 3
+          }
+        }
+
+        const distance = 0
         const translateX = isCurrent
           ? 0
           : index < currentProjectIndex 
@@ -72,17 +137,27 @@ const ProjectCarousel = ({ projects }: {projects: {title: string, image: string}
         return (
           <div
             key={index}
-            className={`absolute inset-0 transform transition-transform duration-500 ease-in-out flex flex-row justify-center items-center w-2/5 border-[4px] p-8 border-black bg-white`}
+            className={`absolute inset-0 transform transition-transform duration-500 ease-in-out flex flex-col gap-2 justify-center items-center w-2/5 hover:cursor-pointer`}
             style={{
-              transform: `translateX(${translateX + 74}%) scale(${size})`,
+              transform: `translateX(${tx + 75}%) scale(${size})`,
               zIndex: zIndex
             }}
+            onClick={() => handleClickProject(index)}
           >
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-[20rem] border-[4px] border-black"
             />
+            <div className="flex flex-row">
+              <h1 className="text-xl font-semibold">
+                {project.title} 
+              </h1>
+              {project.group && <span className="text-xs bg-blue-600 rounded-lg p-1 border border-black mx-2 flex items-center justify-center"
+                style={{
+                  transform: `translateY(${-20}%)`,
+                }}>Group</span>}
+            </div>
           </div>
         );
       })}
