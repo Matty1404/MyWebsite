@@ -14,20 +14,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const ListElem = ({ title, hlink } : {title: string, hlink : string}) => {
+    return (
+      <li className='transform transition-transform duration-500 ease-in-out hover:scale-110'><a href={hlink}>{title}</a></li>
+    )
+  }
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='h-[5rem] bg-gradient-to-t from-black to-gray-700 text-red-800'>
+        <nav className='h-[5rem] bg-gradient-to-t from-black to-gray-700 text-red-800 sticky top-0 z-100'>
           <div className='flex flex-row justify-between h-full'>
             <div className='p-5 flex justify-center items-center text-3xl'>
               Matthew's Portfolio
             </div>
             <div className='p-5 h-full text-xl mx-5 items-center justify-center'>
               <ul className='flex flex-row gap-10'>
-                <li><a href='#'>About me</a></li>
-                <li><a href='#'>Projects</a></li>
-                <li><a href='#'>Achievements</a></li>
-                <li><a href='#'>Experiences</a></li>
+                <ListElem title='About Me' hlink='#'/>
+                <ListElem title='Projects' hlink='#'/>
+                <ListElem title='Achievements' hlink='#'/>
+                <ListElem title='Experiences' hlink='#'/>
               </ul>
             </div>
           </div>
