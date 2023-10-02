@@ -35,6 +35,7 @@ export default function RootLayout({
                 <ListElem title='Projects' hlink='#'/>
                 <ListElem title='Achievements' hlink='#'/>
                 <ListElem title='Experiences' hlink='#'/>
+                <ListElem title='Education' hlink='#'/>
               </ul>
             </div>
           </div>

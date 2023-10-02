@@ -12,7 +12,7 @@ export default function AboutMe() {
                     <span className="text-5xl mr-4">Matthew Tate</span> and I am a  
                 </h1>
                 <h1 className="text-5xl">
-                    Computing student at Imperial College London
+                    Computing student at Imperial College London   
                 </h1>
                 <h1 className="my-4 border flex items-center justify-center py-1 w-[10rem] hover:cursor-pointer">
                     More about me
