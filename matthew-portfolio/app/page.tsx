@@ -3,6 +3,7 @@
 import ParallaxWindow from '@/components/ParallaxWindow'
 import AboutMe from '@/components/aboutme'
 import MyAchievements from '@/components/achievements'
+import MyExperiences from '@/components/experiences'
 import MyProjects from '@/components/projects'
 import Image from 'next/image'
 
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutMe />
       <MyProjects />
       <MyAchievements />
+      <MyExperiences />
     </div>
   )
 }
