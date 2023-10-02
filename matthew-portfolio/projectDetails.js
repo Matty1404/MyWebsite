@@ -95,7 +95,7 @@ export const AllProjects = [
       tags: ["React", "Flask", "Firebase"],
     },
     {
-      title: "Improved PintOS Operating System",
+      title: "Improved PintOS",
       image: "/pintos.png",
       group: true,
       description: `We were tasked with improving an operating system. We had to improve the PintOS scheduler, so that it was able to schedule threads based on the priority of the thread. We also had to allow the programs running on PintOS to interact with the OS via system calls. We also had to improve the systems virtual memory. This was an extremely difficult task which we had to perform using C. It involved a lot of understanding of how operating systems work, as well as a lot of teamwork`,

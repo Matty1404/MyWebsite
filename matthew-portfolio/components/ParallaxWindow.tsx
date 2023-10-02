@@ -1,47 +1,55 @@
-import React, { useEffect, useRef, useState } from 'react';
+// components/ParallaxScroll.js
+import React, { useEffect, useRef } from 'react';
 
-const ParallaxWindow = () => {
-  const [scrollY, setScrollY] = useState(0);
-  
-  const offsetRef = useRef<HTMLDivElement>(null)
-  const [offsetHeight, setOffsetHeight] = useState(0)
-  console.log(scrollY)
-  console.log(offsetHeight)
+const ParallaxScroll = ({title, content, image}: {title: string, content: string, image: string}) => {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    const parallax = parallaxRef.current;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (parallax && divRef && divRef.current) {
+        const scrollY = window.scrollY;
+
+        const rect = divRef.current.getBoundingClientRect()
+        if (
+          rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+      ) {
+          console.log("in view")
+          parallax.style.transform = `translateY(-${(scrollY - rect.top - window.innerHeight + rect.height / 2) * 0.1}px)`; // Adjust the speed as needed
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  useEffect(() => {
-    setOffsetHeight(offsetRef.current !== null && offsetRef.current?.scrollTop !== undefined ? offsetRef.current?.scrollTop: 1)
-  })
-
   return (
-    <div className="relative h-[20rem] overflow-hidden">
-      {/* Content */}
-      <div ref={offsetRef} className="relative z-10 h-full flex items-center justify-center">
-        <div className="p-8 rounded-lg shadow-lg border  border-black">
-          <h1 className="text-3xl font-semibold">Scroll down to see the effect</h1>
-          <p className="text-gray-700 mt-4">
-            This is the content inside the parallax window.
-          </p>
-        </div>
-      </div>
-      {/* Background Image */}
+    <div ref={divRef} className="relative h-[20rem] w-fill border border-black rounded shadow-2xl overflow-hidden bg-black">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        ref={parallaxRef}
+        className="absolute inset-0 bg-center h-[35rem] w-full overflow-auto bg-no-repeat"
         style={{
-          backgroundImage: 'url("./pintos.png")', // Replace with your background image URL
-          transform: `translateY(${scrollY * 0.5}px)`,
+          backgroundImage: `url("${image}")`,
+          opacity: 0.5
         }}
-      /> 
+      ></div>
+      <div className="relative z-20 flex flex-col justify-start items-start p-8 gap-4">
+        <h1 className="text-4xl font-bold text-white">
+          {title}
+        </h1>
+        <p className='font-bold text-xl text-white whitespace-pre-line'>
+          {content}
+        </p>
+        
+      </div>
     </div>
   );
 };
 
-export default ParallaxWindow;
+export default ParallaxScroll;

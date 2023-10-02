@@ -8,9 +8,9 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className='flex flex-col gap-16 h-[300rem]'>
-      {/* <AboutMe />
-      <MyProjects /> */}
+    <div className='flex flex-col gap-16 mb-[10rem] overflow-x-hidden'>
+      <AboutMe />
+      <MyProjects />
       <MyAchievements />
     </div>
   )
