@@ -6,7 +6,7 @@ export default function AboutMe() {
         <div id="AboutMe" className="pt-[5rem] h-[40rem] w-screen bg-gradient-to-r from-black to-gray-700 grid grid-cols-2 justify-center items-center"> 
             <div className="text-white mx-16 p-16 flex flex-col gap-4">
                 <h1 className="text-xl">
-                    Hi there, I'm
+                    Hi there, I&apos;m
                 </h1>
                 <h1 className="text-xl">
                     <span className="text-5xl mr-4">Matthew Tate</span> and I am a  
