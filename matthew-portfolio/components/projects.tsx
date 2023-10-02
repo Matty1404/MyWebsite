@@ -6,7 +6,7 @@ import ProjectInfo from "./projectInfo";
 export default function MyProjects() {
     const projects = AllProjects
     return (
-        <div className="flex flex-col justify-center items-center gap-5">
+        <div id="MyProjects" className="flex flex-col justify-center items-center gap-5 pt-[5rem]">
             <div>
               <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">My Projects</h1>
             </div>

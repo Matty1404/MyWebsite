@@ -4,7 +4,7 @@ import {Timeline} from "./timeline";
 
 export default function MyExperiences() {
     return (
-        <div className="flex flex-col justify-center items-center my-10 gap-4 p-16">
+        <div id="MyExperiences" className="pt-[5rem] flex flex-col justify-center items-center my-10 gap-4 p-16">
             <h1 className="mb-1 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">My Experiences</h1>
             <br></br>
             <Timeline title={`Tutor`} dates={`Sept 2019 - Present`} content={`North Finchley Tutors - I work as a teaching assistant, teacher, and I help manage the other teaching assistant. I take on a lot of responsibilities such as making sure kids are understanding the content, making sure they understand the mistakes they made in their homework, and also communication with their parents to highlight where their child excels in and what subjects needs more work on. I also privately tutor maths and violin`}/>

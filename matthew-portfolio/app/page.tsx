@@ -8,7 +8,8 @@ import MyExperiences from '@/components/experiences'
 import MyProjects from '@/components/projects'
 import Image from 'next/image'
 
-export default function Home() {
+
+export default function Home() { 
   return (
     <div className='flex flex-col gap-16 mb-[10rem] overflow-x-hidden'>
       <AboutMe />

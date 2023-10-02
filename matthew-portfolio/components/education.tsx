@@ -4,7 +4,7 @@ import {EduTimeline} from "./timeline";
 
 export default function MyEducation() {
     return (
-        <div className="flex flex-col justify-center items-center my-10 gap-4 p-16">
+        <div id="MyEducation" className="flex flex-col justify-center items-center pt-[5rem] gap-4 p-16">
             <h1 className="mb-1 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">My Education</h1>
             <br></br>
             <EduTimeline 

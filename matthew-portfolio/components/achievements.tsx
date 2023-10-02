@@ -4,7 +4,7 @@ import ParallaxWindow from "./ParallaxWindow";
 
 export default function MyAchievements() {
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div id="MyAchievements" className="flex flex-col justify-center pt-[5rem] items-center">
             <h1 className="mb-1 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">My Achievements</h1>
             <br></br>
             <div className="w-full grid grid-cols-2 gap-4 justify-center items-center px-8">
