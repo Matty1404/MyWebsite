@@ -12,7 +12,7 @@ export default function NavBar() {
     )
   }
   return (
-    <nav className='h-[5rem] bg-gradient-to-r from-black to-gray-700 text-red-800 sticky top-0 z-[200]'>
+    <nav className='h-[5rem] bg-gradient-to-r from-black to-gray-700 text-red-600 sticky top-0 z-[200]'>
       <div className='flex flex-row justify-between h-full'>
         <div className='p-5 flex justify-center items-center text-3xl'>
           Matthew&apos;s Portfolio
