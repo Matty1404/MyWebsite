@@ -58,19 +58,19 @@ export const AllProjects = [
     },
     {
       title: "ARM11 Assembler",
-      image: "/",
+      image: "/assembler.png",
       group: true,
       description:`In a pair, we used C to create an assembler for a subset of the ARM11 instruction set architecture. We had to read a low level language and parse the words into a binary file which a raspberry pi could read. Instructions included branching, data tranfers (loading and storing data into and out of memory), data processing and more.`,
       tags: ["C", "ARM11"],
     },
     {
       title: "11+ Prep App",
-      image: "/",
+      image: "/11plus.png",
       group: false,
       description: `In python, I created an 11+ prep app where a primary school child can train for their 11+. You could add your child to a database and test them on auto-generated tests. The scores are then stored into a database where you can see the childs progress over time.
 
       It test english and maths, where you can add and remove english words and their definitions that you would like your child to learn. There are also many games for the child to choose from such as hangman, a memory game (with words and definitions) and math puzzles.`,
-      tags: ["Python", "MySQL"],
+      tags: ["Python", "MySQL", "Tkinter"],
     },
     {
       title: "Compiler for WACC language",
