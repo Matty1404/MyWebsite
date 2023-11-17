@@ -108,5 +108,12 @@ export const AllProjects = [
       description: `This is a fun game which you play in the real world with your friends. It was inspired by Agar.io which we made in Unity. I learnt to use the Unity engine, as well as coding using C++. We had a lot of hickups on the way, such as difficulties working on different parts of projects at different times due to the overly confusing merge conflicts that Unity threw at us`,
       tags: ["C++", "Networking", "Game"],
     },
+    // {
+    //   title: "Sodoku Solver",
+    //   image: "/chase.png",
+    //   group: false,
+    //   description: `I created a soduku solver using tkinter. you input all the numbers given to you, and it will automatically solve it for you.`,
+    //   tags: ["Python", "Tkinter"],
+    // },
     // Add more project objects as needed
   ];
